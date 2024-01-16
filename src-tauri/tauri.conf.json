@@ -3,6 +3,7 @@
     "productName": "carpe",
     "version": "1.0.0-14"
   },
+
   "build": {
     "distDir": "../dist",
     "devPath": "http://localhost:3000",
