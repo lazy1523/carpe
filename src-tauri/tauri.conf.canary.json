@@ -3,6 +3,7 @@
     "productName": "carpe-canary",
     "version": "1.0.0-13"
   },
+
   "build": {
     "distDir": "../dist",
     "devPath": "http://localhost:3000",
