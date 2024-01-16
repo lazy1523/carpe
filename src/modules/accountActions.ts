@@ -124,6 +124,8 @@ export function findOneAccount(account: string): CarpeProfile | undefined {
 }
 
 export const setAccount = async (account: string, notifySucess = true) => {
+  if (get(signingAccount).account == account) return
+
   // cannot switch profile with miner running
   if (get(minerLoopEnabled)) {
     notify_error('To switch accounts you need to turn miner off first.')
@@ -210,8 +212,6 @@ export function getAccountEvents(account: CarpeProfile, errorCallback = null) {
 }
 
 export const isLegacy = async (): Promise<boolean> => {
-  // let canMigrate = false
-
   return invoke('has_legacy_configs', {})
     .then((b: boolean) => {
       if (b) logger(Level.Warn, 'legacy configs found, should try to migrate')
