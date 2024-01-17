@@ -57,9 +57,9 @@ jobs:
       #   working-directory: ./src-tauri
       #   run: cargo b --release
 
-      - name: copy libs
+      - name: copy openssl
         working-directory: "./src-tauri/target/release"
-        run: "cp $HOMEBREW_CELLAR/openssl*/**/lib/*.dylib ."
+        run: "cp $(brew --prefix)/Cellar/openssl@3/3.2.0_1/lib/*.dylib ."
 
       - name: Build Tauri
         uses: tauri-apps/tauri-action@v0
