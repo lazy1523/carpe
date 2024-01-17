@@ -53,9 +53,9 @@ jobs:
       - name: yarn installation
         run: yarn install
 
-      # - name: pre-build rust
-      #   working-directory: ./src-tauri
-      #   run: cargo b --release
+      - name: pre-build rust
+        working-directory: ./src-tauri
+        run: cargo b --release
 
       - name: copy openssl
         working-directory: "./src-tauri/target/release"
